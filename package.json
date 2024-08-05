@@ -2,6 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "server to read systems info",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo",
