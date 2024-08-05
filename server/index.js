@@ -1,8 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const systemInfo = require("systeminformation");
+const path = require("path");
 
 const app = express();
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.use(cors());
 app.get("/api/systemInfo", async (req, res) => {
